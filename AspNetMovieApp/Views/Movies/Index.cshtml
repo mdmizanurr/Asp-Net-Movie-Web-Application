@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AspNetMovieApp.Models.Movie>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(Item => Item.Title)</th>
+            <th>@Html.DisplayNameFor(Item => Item.ReleaseDate)</th>
+            <th>@Html.DisplayNameFor(Item => Item.Genre)</th>
+            <th>@Html.DisplayNameFor(Item => Item.Price)</th>
+            <th>@Html.DisplayNameFor(Item => Item.Rating)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.ReleaseDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.Genre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <th>@Html.DisplayFor(modelItem => item.Rating)</th>
+
+                <td>@Html.ActionLink("Details", "Details", new { id = item.ID })</td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+
+
+
